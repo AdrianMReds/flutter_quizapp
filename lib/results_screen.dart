@@ -11,7 +11,8 @@ class ResultsScreen extends StatelessWidget {
   final List<String> chosenAnswers;
   final void Function() restart;
 
-  List<Map<String, Object>> getSummaryData() {
+  // Example of a getter
+  List<Map<String, Object>> get summaryData {
     final List<Map<String, Object>> summary = [];
 
     for (var i = 0; i < chosenAnswers.length; i++) {
@@ -27,7 +28,6 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final summaryData = getSummaryData();
     final numTotalQuestions = questions.length;
     final correctAnwers = summaryData
         .where((data) => data['user_answer'] == data['correct_answer'])
